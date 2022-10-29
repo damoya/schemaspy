@@ -46,6 +46,7 @@ import org.schemaspy.output.diagram.SummaryDiagram;
 import org.schemaspy.output.diagram.TableDiagram;
 import org.schemaspy.output.diagram.graphviz.GraphvizDot;
 import org.schemaspy.output.diagram.vizjs.VizJSDot;
+import org.schemaspy.output.docx.DocxProducer;
 import org.schemaspy.output.dot.DotConfig;
 import org.schemaspy.output.dot.schemaspy.DefaultFontConfig;
 import org.schemaspy.output.dot.schemaspy.DotFormatter;
@@ -289,6 +290,11 @@ public class SchemaAnalyzer {
             }
 
             try {
+
+                if (commandLineArguments.isDocxEnabled()) {
+                    new DocxProducer().generate(db, outputDir);
+                }
+                
                 outputProducer.generate(db, outputDir);
             } catch (OutputException oe) {
                 if (config.isOneOfMultipleSchemas()) {

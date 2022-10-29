@@ -100,6 +100,16 @@ public class CommandLineArguments {
 
     @Parameter(
             names = {
+                    "-docx", "--docx", "docx",
+                    "schemaspy.docx"
+            },
+            descriptionKey = "docx"
+    )
+    private boolean docx = false;
+
+
+    @Parameter(
+            names = {
                     "-noimplied", "--no-implied", "noimplied",
                     "schemaspy.noimplied"
             },
@@ -428,6 +438,10 @@ public class CommandLineArguments {
 
     public boolean isHtmlEnabled() {
         return !nohtml;
+    }
+
+    public boolean isDocxEnabled() {
+        return docx;
     }
 
     public boolean withImpliedRelationships() {

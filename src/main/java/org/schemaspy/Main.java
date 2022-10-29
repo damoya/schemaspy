@@ -50,6 +50,34 @@ public class Main {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     public static void main(String... args) {
+
+        String [] args2 = { "--outputDirectory", "/mnt/d/Temp/mySchemeSpy",
+                        "-u", "sda", 
+                        "-t", "derby",
+                        "-db", "/mnt/c/rpa102/db",
+                        "-dp", "/mnt/c/rpa102/jar/derby-10.11.1.1.jar",
+                        "-cat", "APP",
+                        "-s", "APP",
+                        "-nohtml",
+                        "-docx",
+                        "-debug"};
+
+        // String [] args2 = { "--outputDirectory", "/mnt/d/Temp/mySchemeSpy",
+        //                 "-u", "bdga", 
+        //                 "-p", "bdga", 
+        //                 "-host", "172.30.223.3",
+        //                 "-port", "1521",
+        //                 "-t", "orathin",
+        //                 "-db", "ICARO",
+        //                 "-dp", "/mnt/d/Java/lib/oracle/ojdbc8.jar",
+        //                 "-cat", "BDGA",
+        //                 "-s", "BDGA",
+        //                 "-nohtml",
+        //                 "-docx",
+        //                 "-debug"};
+
+        args = args2;
+
         ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);
         SchemaSpyRunner schemaSpyRunner = context.getBean(SchemaSpyRunner.class);
         schemaSpyRunner.run(args);

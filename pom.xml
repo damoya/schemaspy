@@ -344,6 +344,29 @@
             <artifactId>xalan</artifactId>
             <version>2.7.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.docx4j</groupId>
+            <artifactId>docx4j-core</artifactId>
+            <version>11.2.9</version>
+        </dependency>
+        <!-- use the JAXB shipped in Java 8 -->
+        <dependency>
+            <groupId>org.docx4j</groupId>
+            <artifactId>docx4j-JAXB-Internal</artifactId>
+            <version>8.3.3</version>
+        </dependency>
+        <!-- use the JAXB Reference Implementation -->
+        <dependency>
+            <groupId>org.docx4j</groupId>
+            <artifactId>docx4j-JAXB-ReferenceImpl</artifactId>
+            <version>8.3.3</version>
+        </dependency>
+        <!-- use the MOXy JAXB implementation -->
+        <dependency>
+            <groupId>org.docx4j</groupId>
+            <artifactId>docx4j-JAXB-MOXy</artifactId>
+            <version>8.3.3</version>
+        </dependency>
     </dependencies>
     <build>
         <resources>
